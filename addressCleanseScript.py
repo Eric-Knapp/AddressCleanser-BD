@@ -39,7 +39,7 @@ df['Address 2a'] = df['OccupancyType'] + (' ' + df['OccupancyIdentifier']).filln
 df['Address 2b'] = df['SubaddressType']+ (' ' + df['SubaddressIdentifier']).fillna('')
 df['Address 2'] = df['Address 2a'].fillna('')+ ('' + df['Address 2b']).fillna('')
 
-# df.drop(['AddressNumber','StreetName','StreetNamePreDirectional','StreetNamePostDirectional','StreetNamePrefix','StreetNameSuffix'], axis=1, inplace=True)
+
 df=df.rename(columns={"address": "Old Address", "PlaceName": "City", "StateName": "State","ZipCode": "Zip Code"})
 df = df[['SAP Number', 'GAG', 'name', 'Old Address', 'Address 1','Address 2','City','State','Zip Code','USPS Box']]
 
