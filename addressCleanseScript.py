@@ -43,7 +43,7 @@ df['Address 2'] = df['Address 2a'].fillna('')+ ('' + df['Address 2b']).fillna(''
 df=df.rename(columns={"address": "Old Address", "PlaceName": "City", "StateName": "State","ZipCode": "Zip Code"})
 df = df[['SAP Number', 'GAG', 'name', 'Old Address', 'Address 1','Address 2','City','State','Zip Code','USPS Box']]
 
-with pd.ExcelWriter(r'C:YOUR OUTPUT FILE LOCATION.xlsx') as writer:  # doctest: +SKIP    # input your location for reading your output file
+with pd.ExcelWriter(r'C:YOUR OUTPUT FILE LOCATION.xlsx') as writer:  # input your location for reading your output file
      df.to_excel(writer, sheet_name='new data',index=False)
     
 
